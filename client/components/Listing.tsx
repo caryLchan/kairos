@@ -96,103 +96,200 @@ const Listing = ({ navigation }: any) => {
     { value: 'Rejected' },
     { value: 'Offer $' }
   ]
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text style={{ flexDirection: 'row', justifyContent: "flex-end", fontSize: 25, fontWeight: "bold", color: "dodgerblue", alignSelf: 'center' }}>Listing</Text>
-      <View style={{ flex: 1, justifyContent: "center", paddingTop: 70, backgroundColor: "#fafafa" }}>
-        <View style={styles.input}>
-          <Input
-            placeholder='Software Engineer'
-            style={styles.inputField}
-            onChangeText={text => setJobTitle(text)}
-            value={jobTitle}
-            label='Job Title'
-          />
-        </View>
-
-        <View style={styles.input}>
-          <Input
-            placeholder='Facebook'
-            style={styles.inputField}
-            onChangeText={text => setCompany(text)}
-            value={company}
-            label='Company'
-          />
-        </View>
-
-        <View style={styles.input}>
-          <Input
-            placeholder='LA'
-            style={styles.inputField}
-            onChangeText={text => setLocation(text)}
-            value={location}
-            label='Location'
-          />
-        </View>
-
-        <View style={{ alignItems: "center" }}>
-          <DatePicker
-            style={{ width: 200, borderBottomColor: '#fff' }}
-            date={date}
-            mode="date"
-            placeholder="Applied Date"
-            format="YYYY-MM-DD"
-            confirmBtnText="Confirm"
-            cancelBtnText="Cancel"
-            showIcon={true}
-            customStyles={{
-              dateIcon: {
-                position: 'absolute',
-                left: 5,
-                top: 4,
-              },
-              dateInput: {
-                borderWidth: 0
-              },
-              // ... You can check the source to find the other keys.
-            }}
-            onDateChange={date => setDate(date)}
-          />
-        </View>
-
-        <View style={styles.input}>
-          <Input
-            placeholder='You got this!'
-            style={styles.inputField}
-            onChangeText={text => setNotes(text)}
-            value={notes}
-            label='Notes'
-          />
-        </View>
-        <View style={{ paddingTop: 50 }}>
-          <View style={styles.status}>
-            <Dropdown
-              label='Status'
-              data={options}
-              style={{ width: 50 }}
-              onChangeText={(el) => setStatus(el)}
+  if (!obj.a) {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={{ flexDirection: 'row', justifyContent: "flex-end", fontSize: 25, fontWeight: "bold", color: "dodgerblue", alignSelf: 'center' }}>Listing</Text>
+        <View style={{ flex: 1, justifyContent: "center", paddingTop: 70, backgroundColor: "#fafafa" }}>
+          <View style={styles.input}>
+            <Input
+              placeholder='Software Engineer'
+              style={styles.inputField}
+              onChangeText={text => setJobTitle(text)}
+              value={jobTitle}
+              label='Job Title'
             />
           </View>
-        </View>
 
-        <View style={styles.buttons}>
-          <View style={styles.fixToText}>
-            <Button
-              style={{ marginRight: 20 }}
-              title='Create'
-              type="clear"
-              raised={true}
-              titleStyle={{ color: "#fafafa", fontWeight: "bold" }}
-              buttonStyle={{ backgroundColor: "#99ccff", borderRadius: 10 }}
-              onPress={handlePressCreateButton}
+          <View style={styles.input}>
+            <Input
+              placeholder='Facebook'
+              style={styles.inputField}
+              onChangeText={text => setCompany(text)}
+              value={company}
+              label='Company'
             />
           </View>
-        </View>
-      </View>
-    </SafeAreaView>
 
-  );
+          <View style={styles.input}>
+            <Input
+              placeholder='LA'
+              style={styles.inputField}
+              onChangeText={text => setLocation(text)}
+              value={location}
+              label='Location'
+            />
+          </View>
+
+          <View style={{ alignItems: "center" }}>
+            <DatePicker
+              style={{ width: 200, borderBottomColor: '#fff' }}
+              date={date}
+              mode="date"
+              placeholder="Applied Date"
+              format="YYYY-MM-DD"
+              confirmBtnText="Confirm"
+              cancelBtnText="Cancel"
+              showIcon={true}
+              customStyles={{
+                dateIcon: {
+                  position: 'absolute',
+                  left: 5,
+                  top: 4,
+                },
+                dateInput: {
+                  borderWidth: 0
+                },
+                // ... You can check the source to find the other keys.
+              }}
+              onDateChange={date => setDate(date)}
+            />
+          </View>
+
+          <View style={styles.input}>
+            <Input
+              placeholder='You got this!'
+              style={styles.inputField}
+              onChangeText={text => setNotes(text)}
+              value={notes}
+              label='Notes'
+            />
+          </View>
+          <View style={{ paddingTop: 50 }}>
+            <View style={styles.status}>
+              <Dropdown
+                label='Status'
+                data={options}
+                style={{ width: 50 }}
+                onChangeText={(el) => setStatus(el)}
+              />
+            </View>
+          </View>
+
+          <View style={styles.buttons}>
+            <View style={styles.fixToText}>
+              <Button
+                style={{ marginRight: 20 }}
+                title='Create'
+                type="clear"
+                raised={true}
+                titleStyle={{ color: "#fafafa", fontWeight: "bold" }}
+                buttonStyle={{ backgroundColor: "#99ccff", borderRadius: 10 }}
+                onPress={handlePressCreateButton}
+              />
+            </View>
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
+  else {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={{ flexDirection: 'row', justifyContent: "flex-end", fontSize: 25, fontWeight: "bold", color: "dodgerblue", alignSelf: 'center' }}>Listing</Text>
+        <View style={{ flex: 1, justifyContent: "center", paddingTop: 70, backgroundColor: "#fafafa" }}>
+          <View style={styles.input}>
+            <Input
+              placeholder='Software Engineer'
+              style={styles.inputField}
+              onChangeText={text => setJobTitle(text)}
+              value={jobTitle}
+              label='Job Title'
+            />
+          </View>
+
+          <View style={styles.input}>
+            <Input
+              placeholder='Facebook'
+              style={styles.inputField}
+              onChangeText={text => setCompany(text)}
+              value={company}
+              label='Company'
+            />
+          </View>
+
+          <View style={styles.input}>
+            <Input
+              placeholder='LA'
+              style={styles.inputField}
+              onChangeText={text => setLocation(text)}
+              value={location}
+              label='Location'
+            />
+          </View>
+
+          <View style={{ alignItems: "center" }}>
+            <DatePicker
+              style={{ width: 200, borderBottomColor: '#fff' }}
+              date={date}
+              mode="date"
+              placeholder="Applied Date"
+              format="YYYY-MM-DD"
+              confirmBtnText="Confirm"
+              cancelBtnText="Cancel"
+              showIcon={true}
+              customStyles={{
+                dateIcon: {
+                  position: 'absolute',
+                  left: 5,
+                  top: 4,
+                },
+                dateInput: {
+                  borderWidth: 0
+                },
+                // ... You can check the source to find the other keys.
+              }}
+              onDateChange={date => setDate(date)}
+            />
+          </View>
+
+          <View style={styles.input}>
+            <Input
+              placeholder='You got this!'
+              style={styles.inputField}
+              onChangeText={text => setNotes(text)}
+              value={notes}
+              label='Notes'
+            />
+          </View>
+          <View style={{ paddingTop: 50 }}>
+            <View style={styles.status}>
+              <Dropdown
+                label='Status'
+                data={options}
+                style={{ width: 50 }}
+                onChangeText={(el) => setStatus(el)}
+              />
+            </View>
+          </View>
+
+          <View style={styles.buttons}>
+            <View style={styles.fixToText}>
+              <Button
+                style={{ marginRight: 20 }}
+                title='Update'
+                type="clear"
+                raised={true}
+                titleStyle={{ color: "#fafafa", fontWeight: "bold" }}
+                buttonStyle={{ backgroundColor: "#99ccff", borderRadius: 10 }}
+                onPress={handlePressCreateButton}
+              />
+            </View>
+          </View>
+        </View>
+      </SafeAreaView>
+    );
+  }
 }
 
 export default Listing
